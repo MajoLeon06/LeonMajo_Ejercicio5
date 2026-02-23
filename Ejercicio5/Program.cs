@@ -12,3 +12,62 @@ Console.WriteLine("Ingrese historial crediticio");
 int historial = int.Parse(Console.ReadLine());
 Console.WriteLine("¿Tiene fiador? 1:Si 2:No");
 int fiador = int.Parse(Console.ReadLine());
+if (solicitante >= 1 && solicitante <= 4 && historial >= 1 && historial <= 4 && fiador >= 1 && fiador <= 2)
+{
+    if (ingreso > monto)
+    {
+        switch (solicitante)
+        {
+            case 1:
+                {
+                    if (historial == 1 || historial == 2)
+                    {
+                        Console.WriteLine("Aprobado por empleado e historial");
+                    }
+                    else if(historial==3)
+                    {
+                        Console.WriteLine("Aprobado con condiciones por historial");
+                    }
+                    else
+                    {
+                        if (fiador==1)
+                        {
+                            Console.WriteLine("Aprobado condicionado por tener fiador");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Rechazado por mal historial y no tener fiador");
+                        }
+                    }
+                    break;
+                }
+            case 2:
+                {
+                    if (historial == 1 || historial == 2)
+                    {
+                        Console.WriteLine("Aprobado por empleado temporal e historial");
+                    }
+                    else if (historial == 3)
+                    {
+                        Console.WriteLine("Aprobado con condiciones por historial");
+                    }
+                    else
+                    {
+                        if (fiador == 1)
+                        {
+                            Console.WriteLine("Aprobado condicionado por tener fiador");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Rechazado por mal historial y no tener fiador");
+                        }
+                    }
+                }
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Rechazado por falta de fondos");
+    }
+}
