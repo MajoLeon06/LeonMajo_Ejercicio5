@@ -94,10 +94,31 @@ if (solicitante >= 1 && solicitante <= 4 && historial >= 1 && historial <= 4 && 
                     }
                     break;
                 }
+            case 4:
+                {
+                    if (fiador==1)
+                    {
+                        Console.WriteLine("Aprobado por tener fiador");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Rechazado por falta de fiador");
+                    }
+                    break;
+                }
+            default:
+                {
+                    Console.WriteLine("Ingrese una opción válida");
+                    break;
+                }
         }
     }
     else
     {
         Console.WriteLine("Rechazado por falta de fondos");
     }
+}
+else
+{
+    Console.WriteLine("Datos no válidos");
 }
