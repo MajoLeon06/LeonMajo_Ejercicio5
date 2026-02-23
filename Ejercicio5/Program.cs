@@ -62,8 +62,38 @@ if (solicitante >= 1 && solicitante <= 4 && historial >= 1 && historial <= 4 && 
                             Console.WriteLine("Rechazado por mal historial y no tener fiador");
                         }
                     }
+                    break;
                 }
-                break;
+            case 3:
+                {
+                    if (monto * 2 > ingreso)
+                    {
+                        Console.WriteLine("Rechazado, se requieren más ingresos");
+                    }
+                    else
+                    {
+                        if (historial == 1 || historial == 2)
+                        {
+                            Console.WriteLine("Aprobado por historial");
+                        }
+                        else if (historial == 3)
+                        {
+                            Console.WriteLine("Aprobado con condiciones por historial");
+                        }
+                        else
+                        {
+                            if (fiador == 1)
+                            {
+                                Console.WriteLine("Aprobado condicionado por tener fiador");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Rechazado por mal historial y no tener fiador");
+                            }
+                        }
+                    }
+                    break;
+                }
         }
     }
     else
